@@ -85,11 +85,11 @@ public class Model {
 			this.field[to.x][to.y] = State.FREE;
 			this.field[from.x][from.y] = State.USED;
 			if(from.x == to.x) {
-				int col = Math.abs(from.y-to.y);
+				int col = from.y>to.y ? from.y-1 : from.y+1;
 				this.field[from.x][col] = State.USED;
 			}
 			else {
-				int row = Math.abs(from.x-to.x);
+				int row = from.x>to.x ? from.x-1 : from.x+1;
 				this.field[row][from.y] = State.USED;
 			}
 			System.out.println("letzter Zug wurde rückgängig gemacht.");
